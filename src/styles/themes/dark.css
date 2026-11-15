@@ -1,0 +1,68 @@
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces — OLED-inspired pure blacks */
+  --color-background: #000000;
+  --color-surface: #000000;
+  --color-surface-dim: #0a0a0c;
+  --color-surface-bright: #121215;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #0c0c0e;
+  --color-surface-container: #141417;
+  --color-surface-container-high: #1c1c20;
+  --color-surface-container-highest: #26262b;
+
+  /* Content */
+  --color-on-background: #f4f4f5;
+  --color-on-surface: #f4f4f5;
+  --color-on-surface-variant: #a1a1aa;
+  --color-on-surface-subtle: #71717a;
+
+  /* Borders & Dividers */
+  --color-outline: #3f3f46;
+  --color-outline-variant: #27272a;
+  --color-border: #1e1e22;
+
+  /* Primary — Monochromatic White */
+  --color-primary: #ffffff;
+  --color-primary-hover: #e4e4e7;
+  --color-on-primary: #000000;
+  --color-primary-container: #ffffff;
+  --color-on-primary-container: #000000;
+
+  /* Secondary */
+  --color-secondary: #a1a1aa;
+  --color-on-secondary: #09090b;
+  --color-secondary-container: #27272a;
+  --color-on-secondary-container: #d4d4d8;
+
+  /* Semantics (Strictly for financial indicator meaning) */
+  --color-success: #22c55e;
+  --color-on-success: #052e16;
+  --color-success-container: #14532d;
+  --color-on-success-container: #bbf7d0;
+
+  --color-error: #ef4444;
+  --color-on-error: #450a0a;
+  --color-error-container: #7f1d1d;
+  --color-on-error-container: #fecaca;
+
+  --color-warning: #f59e0b;
+  --color-on-warning: #451a03;
+  --color-warning-container: #78350f;
+  --color-on-warning-container: #fef3c7;
+
+  --color-info: #38bdf8;
+  --color-on-info: #082f49;
+  --color-info-container: #0c4a6e;
+  --color-on-info-container: #bae6fd;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.7);
+  --shadow-border: 0 0 0 1px var(--color-border);
+
+  /* Overlays */
+  --color-backdrop: rgba(0, 0, 0, 0.75);
+}
