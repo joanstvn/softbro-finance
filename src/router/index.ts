@@ -54,32 +54,11 @@ const routes: RouteRecordRaw[] = [
         meta: { title: 'Hábitos' },
       },
       {
-        path: 'training',
-        name: 'training',
-        component: GenericView,
-        props: { title: 'Entrenamiento', description: 'Rutinas de ejercicio y seguimiento de progreso.' },
-        meta: { title: 'Entrenamiento' },
-      },
-      {
         path: 'goals',
         name: 'goals',
         component: GenericView,
         props: { title: 'Objetivos', description: 'Metas a corto, mediano y largo plazo con hitos.' },
         meta: { title: 'Objetivos' },
-      },
-      {
-        path: 'subscriptions',
-        name: 'subscriptions',
-        component: GenericView,
-        props: { title: 'Suscripciones', description: 'Control de pagos recurrentes y fechas de cobro.' },
-        meta: { title: 'Suscripciones' },
-      },
-      {
-        path: 'documents',
-        name: 'documents',
-        component: GenericView,
-        props: { title: 'Documentos', description: 'Almacenamiento seguro de facturas y archivos.' },
-        meta: { title: 'Documentos' },
       },
       {
         path: 'assistant',

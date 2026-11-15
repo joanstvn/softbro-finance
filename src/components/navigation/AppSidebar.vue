@@ -8,10 +8,7 @@ import {
   ShoppingCart,
   CheckSquare,
   Target,
-  Dumbbell,
   Flag,
-  CreditCard,
-  FileText,
   Bot,
   Settings,
 } from 'lucide-vue-next'
@@ -25,10 +22,7 @@ const navItems = [
   { name: 'Compras', path: '/shopping', icon: ShoppingCart },
   { name: 'Organización', path: '/organization', icon: CheckSquare },
   { name: 'Hábitos', path: '/habits', icon: Target },
-  { name: 'Entrenamiento', path: '/training', icon: Dumbbell },
   { name: 'Objetivos', path: '/goals', icon: Flag },
-  { name: 'Suscripciones', path: '/subscriptions', icon: CreditCard },
-  { name: 'Documentos', path: '/documents', icon: FileText },
   { name: 'Asistente IA', path: '/assistant', icon: Bot },
 ]
 

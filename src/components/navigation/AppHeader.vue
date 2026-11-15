@@ -17,10 +17,7 @@ const pageTitle = computed(() => {
     '/shopping': 'Compras',
     '/organization': 'Organización',
     '/habits': 'Hábitos',
-    '/training': 'Entrenamiento',
     '/goals': 'Objetivos',
-    '/subscriptions': 'Suscripciones',
-    '/documents': 'Documentos',
     '/assistant': 'Asistente IA',
     '/settings': 'Configuración',
   }
