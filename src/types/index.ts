@@ -140,6 +140,23 @@ export interface Card {
   updated_at: string
 }
 
+export interface Subscription {
+  id: string
+  user_id: string
+  account_id: string | null
+  category_id: string | null
+  name: string
+  provider: string
+  amount: number
+  currency: CurrencyCode
+  frequency: 'monthly' | 'yearly' | 'weekly' | 'custom'
+  next_billing_date: string
+  status: 'active' | 'paused' | 'cancelled'
+  notes: string | null
+  created_at: string
+  updated_at: string
+}
+
 export interface Task {
   id: string
   user_id: string

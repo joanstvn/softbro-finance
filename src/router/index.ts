@@ -61,6 +61,13 @@ const routes: RouteRecordRaw[] = [
         meta: { title: 'Objetivos' },
       },
       {
+        path: 'subscriptions',
+        name: 'subscriptions',
+        component: GenericView,
+        props: { title: 'Suscripciones', description: 'Control de pagos recurrentes y fechas de cobro.' },
+        meta: { title: 'Suscripciones' },
+      },
+      {
         path: 'assistant',
         name: 'assistant',
         component: GenericView,

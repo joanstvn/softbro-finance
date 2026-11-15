@@ -9,6 +9,7 @@ import {
   CheckSquare,
   Target,
   Flag,
+  CreditCard,
   Bot,
   Settings,
 } from 'lucide-vue-next'
@@ -23,6 +24,7 @@ const navItems = [
   { name: 'Organización', path: '/organization', icon: CheckSquare },
   { name: 'Hábitos', path: '/habits', icon: Target },
   { name: 'Objetivos', path: '/goals', icon: Flag },
+  { name: 'Suscripciones', path: '/subscriptions', icon: CreditCard },
   { name: 'Asistente IA', path: '/assistant', icon: Bot },
 ]
 

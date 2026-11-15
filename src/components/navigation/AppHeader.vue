@@ -18,6 +18,7 @@ const pageTitle = computed(() => {
     '/organization': 'Organización',
     '/habits': 'Hábitos',
     '/goals': 'Objetivos',
+    '/subscriptions': 'Suscripciones',
     '/assistant': 'Asistente IA',
     '/settings': 'Configuración',
   }
