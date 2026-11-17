@@ -101,6 +101,18 @@ export const router = createRouter({
 
 router.beforeEach(async (to, _from, next) => {
   const authStore = useAuthStore()
+
+  // Si viene del callback de OAuth con el hash en la URL (#access_token=...)
+  if (window.location.hash.includes('access_token')) {
+    const { data } = await supabase.auth.getSession()
+    if (data.session) {
+      authStore.session = data.session
+      authStore.user = data.session.user
+      await authStore.fetchProfile(data.session.user.id)
+      return next({ name: 'dashboard' })
+    }
+  }
+
   if (authStore.loading) {
     await authStore.initializeAuth()
   }
