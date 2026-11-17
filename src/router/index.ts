@@ -5,6 +5,7 @@ import FinanceView from '@/views/finance/FinanceView.vue'
 import AuthView from '@/views/auth/AuthView.vue'
 import GenericView from '@/views/common/GenericView.vue'
 import { useAuthStore } from '@/stores/auth'
+import { supabase } from '@/services/supabase'
 
 const routes: RouteRecordRaw[] = [
   {
