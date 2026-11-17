@@ -74,6 +74,17 @@ export const useAuthStore = defineStore('auth', () => {
     return data
   }
 
+  async function loginWithGoogle() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: window.location.origin + '/dashboard',
+      },
+    })
+    if (error) throw error
+    return data
+  }
+
   async function register(email: string, password: string, fullName: string) {
     const { data, error } = await supabase.auth.signUp({
       email,
@@ -105,6 +116,7 @@ export const useAuthStore = defineStore('auth', () => {
     isAuthenticated,
     initializeAuth,
     login,
+    loginWithGoogle,
     register,
     logout,
   }
