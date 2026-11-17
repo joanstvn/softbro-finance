@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
 import ThemeToggle from './ThemeToggle.vue'
 import {
   LayoutDashboard,
@@ -12,9 +13,17 @@ import {
   CreditCard,
   Bot,
   Settings,
+  LogOut,
 } from 'lucide-vue-next'
 
 const route = useRoute()
+const router = useRouter()
+const authStore = useAuthStore()
+
+async function handleLogout() {
+  await authStore.logout()
+  router.push('/auth')
+}
 
 const navItems = [
   { name: 'Inicio', path: '/dashboard', icon: LayoutDashboard },
@@ -67,6 +76,16 @@ function isActive(path: string) {
         <Settings :size="20" class="nav-icon" />
         <span class="nav-label">Configuración</span>
       </router-link>
+
+      <button
+        v-if="authStore.isAuthenticated"
+        class="logout-btn"
+        title="Cerrar sesión"
+        @click="handleLogout"
+      >
+        <LogOut :size="18" />
+      </button>
+
       <div class="footer-actions">
         <ThemeToggle />
       </div>
@@ -189,6 +208,22 @@ function isActive(path: string) {
 .footer-actions {
   display: flex;
   align-items: center;
+}
+
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  color: var(--color-on-surface-variant);
+  transition: all var(--duration-fast);
+}
+
+.logout-btn:hover {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
 }
 
 @media (max-width: 680px) {

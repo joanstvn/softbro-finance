@@ -1,12 +1,22 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import AppLayout from '@/layouts/AppLayout.vue'
 import DashboardView from '@/views/dashboard/DashboardView.vue'
+import FinanceView from '@/views/finance/FinanceView.vue'
+import AuthView from '@/views/auth/AuthView.vue'
 import GenericView from '@/views/common/GenericView.vue'
+import { useAuthStore } from '@/stores/auth'
 
 const routes: RouteRecordRaw[] = [
   {
+    path: '/auth',
+    name: 'auth',
+    component: AuthView,
+    meta: { guestOnly: true },
+  },
+  {
     path: '/',
     component: AppLayout,
+    meta: { requiresAuth: true },
     children: [
       {
         path: '',
@@ -21,8 +31,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'finance',
         name: 'finance',
-        component: GenericView,
-        props: { title: 'Finanzas', description: 'Administra tus cuentas, presupuestos y transacciones.' },
+        component: FinanceView,
         meta: { title: 'Finanzas' },
       },
       {
@@ -88,4 +97,21 @@ const routes: RouteRecordRaw[] = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+})
+
+router.beforeEach(async (to, _from, next) => {
+  const authStore = useAuthStore()
+  if (authStore.loading) {
+    await authStore.initializeAuth()
+  }
+
+  if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+    return next({ name: 'auth' })
+  }
+
+  if (to.meta.guestOnly && authStore.isAuthenticated) {
+    return next({ name: 'dashboard' })
+  }
+
+  next()
 })
